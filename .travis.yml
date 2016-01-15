@@ -1,7 +1,13 @@
 language: scala
-
 scala:
-  - 2.11.7
-
+- 2.11.7
 script:
-  - sbt ++$TRAVIS_SCALA_VERSION assembly
+- sbt ++$TRAVIS_SCALA_VERSION assembly
+deploy:
+  provider: releases
+  api_key:
+    secure: XEsX00ec83r3D78nIrmmMMVdTTl8MdZ0IR/Z95jM1q6vJF99mmbiGRS9EJR9Zj2MhRDzizyKSoINiFWUrZGaCy00DnxAZstKIeC18G/PzycuFiWlu/Rq/kKsWZ2PfmBNoB+uE1x/ZW9utO5BfilvDFywOOXyXlx2xlSsRHf5gbavvfnknWs2afb9OPOAGRu5gtdnlTRfoqLRwShyUc36rrNFa4kvRlzu/N8EXCBGbhNgnpiIe25LH/35yirbeLlgoiEZWB/O68NDbKOxgWCK60vqXBVI69S0wtbu3ES3LJy/otB3/T36JuFP3yPzD+tu1dBI611X3t8PdOY1kDOPckcTtLS1aecsNLGbS7aN+KvU2EcuCmtnd20pnmdIzGGwsLP06nYyuB/Pmu4j8+1L2Q7gNdPVsciqkWxouzMi6wnLg0PLAf9JK/TX/TZpi0lVTN9sXXYP7cs/7cGTnoErEGeZQa2Z+eX5SeMdJ5G1fT5DKu3rFNlLT2Kxssfg9xZs8wiIn6lKssQP2toSLIRSyoOXnQHD0/1gModL0DA1NqrwCo5eH4BsCtyO4HDjwUOZbeZqw5DHeTx6fkbbEYwIyRTxKWw+W2MycZoQs02XI3KiUxo/XWzyX9Jt+Y4aXM4m5EJhSenpxUaqBqBM/yFe/JL1GcFhI6N7hyk7c3yPEiA=
+  file: target/scala-2.11/Go-HipChat.jar
+  skip_cleanup: true
+  on:
+    tags: true
