@@ -13,8 +13,15 @@ object GoHipChatPlugin {
 
   val goExtensionType = "notification"
   val supportedGoVersions = List("1.0").asJava
-  
-  val conf = ConfigFactory.parseFile(new File("/var/go/application.conf"))
+
+  val logger = Logger.getLoggerFor(classOf[GoHipChatPlugin])
+
+  val homeDir = new File(System.getProperty("user.home"))
+  val confFile = new File(homeDir, "application.conf")
+
+  logger.info("Looking for configuration at " + confFile.getPath())
+
+  val conf = ConfigFactory.parseFile(confFile)
     .withFallback(ConfigFactory.load(getClass().getClassLoader()))
   conf.checkValid(ConfigFactory.defaultReference(), "GoHipChat")
 
@@ -22,7 +29,6 @@ object GoHipChatPlugin {
   val hipchatApiToken = conf.getString("GoHipChat.apiToken")
   val goBaseUrl = conf.getString("GoHipChat.goBaseUrl")
   
-  val logger = Logger.getLoggerFor(classOf[GoHipChatPlugin])
   logger.info("finished init")
   logger.info(conf.root().render())
 }
