@@ -2,7 +2,7 @@ name := "Go-HipChat"
 
 //  Version numbers are in <year>.<release> format.
 //  The first release of 2016 is version "16.1".
-version := "16.1"
+version := "16.2"
 
 scalaVersion := "2.11.7"
 

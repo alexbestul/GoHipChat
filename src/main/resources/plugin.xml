@@ -3,7 +3,7 @@
 <go-plugin id="go-hipchat" version="1">
 	<about>
 		<name>Go->HipChat</name>
-		<version>16.1</version>
+		<version>16.2</version>
 		<target-go-version>15.2.0</target-go-version>
 		<description>
 			Send Go.cd events to a HipChat room.  Written in Scala.  Uses the Go notification API and HipChat API v2.
