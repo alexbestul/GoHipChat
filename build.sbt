@@ -6,6 +6,8 @@ version := "16.1"
 
 scalaVersion := "2.11.7"
 
+assemblyJarName in assembly := name.value + ".jar"
+
 libraryDependencies ++= Seq(
   "cd.go.plugin" % "go-plugin-api" % "15.2.0",
   "org.scalaj" %% "scalaj-http" % "2.2.0",
