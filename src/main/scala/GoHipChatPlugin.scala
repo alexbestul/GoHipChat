@@ -16,11 +16,11 @@ object GoHipChatPlugin {
   
   val conf = ConfigFactory.parseFile(new File("/var/go/application.conf"))
     .withFallback(ConfigFactory.load(getClass().getClassLoader()))
-  conf.checkValid(ConfigFactory.defaultReference(), "hk47")
+  conf.checkValid(ConfigFactory.defaultReference(), "GoHipChat")
 
-  val hipchatApiUrl = conf.getString("hk47.roomUrl")
-  val hipchatApiToken = conf.getString("hk47.apiToken")
-  val goBaseUrl = conf.getString("hk47.goBaseUrl")
+  val hipchatApiUrl = conf.getString("GoHipChat.roomUrl")
+  val hipchatApiToken = conf.getString("GoHipChat.apiToken")
+  val goBaseUrl = conf.getString("GoHipChat.goBaseUrl")
   
   val logger = Logger.getLoggerFor(classOf[GoHipChatPlugin])
   logger.info("finished init")
